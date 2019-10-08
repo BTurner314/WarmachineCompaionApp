@@ -18,5 +18,5 @@ public class Warcasters {
 	static Image durstBackCard = new Image(Warcasters.class.getResourceAsStream("/Images/Menoth/MenothWarcasters/durstBackCard.png"));
 	static Image durstSpellCard = new Image(Warcasters.class.getResourceAsStream("/Images/Menoth/MenothWarcasters/durstSpellCard.png"));
 	static Image durstFeatCard = new Image(Warcasters.class.getResourceAsStream("/Images/Menoth/MenothWarcasters/durstFeatCard.png"));
-	public static models.Warcaster ansonDurst = new models.Warcaster(28, "Anson Durst, Rock of the Faith", "Menoth", "C", durstFrontCard, durstBackCard, libraries.WeaponLoadouts.durst, AbilityLoadouts.durst, 5, 7, 8, 4, 13, 18, 10, 19, SpellLoadouts.durst, 6, Feats.durst, durstSpellCard, durstFeatCard);
+	public static models.Warcaster ansonDurst = new models.Warcaster("Anson Durst, Rock of the Faith" ,"Protectorate Paladin Warcaster" ,"Menoth", 28, "C", durstFrontCard, durstBackCard, libraries.WeaponLoadouts.durst, AbilityLoadouts.durst, 5, 7, 8, 4, 13, 18, 10, 19, SpellLoadouts.durst, 6, Feats.durst, durstSpellCard, durstFeatCard);
 }

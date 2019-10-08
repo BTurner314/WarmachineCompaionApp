@@ -16,11 +16,12 @@ public class Warcaster extends WarriorModel{
 	private Image featCard;
 	private int warjackPoints;
 	
-	public Warcaster(int warjackPoints, String name, String faction, String fieldAllowance, Image frontCard, Image backCard,
-			ArrayList<Weapons> weapons, ArrayList<Abilities> abilities, int speed, int str, int mat, int rat, int def,
-			int arm, int cmd, int health, ArrayList<libraries.Spells> spells, int focus, Feats feat, Image spellCard, Image featCard) {
-		super(name, faction, fieldAllowance, frontCard, backCard, weapons, abilities, speed, str, mat, rat, def, arm,
+	public Warcaster(String name, String subType, String faction, int warjackPoints, String fieldAllowance, Image frontCard,
+			Image backCard, ArrayList<Weapons> weapons, ArrayList<Abilities> abilities, int speed, int str, int mat,
+			int rat, int def, int arm, int cmd, int health,ArrayList<libraries.Spells> spells, int focus, Feats feat, Image spellCard, Image featCard) {
+		super(name, subType, faction, fieldAllowance, frontCard, backCard, weapons, abilities, speed, str, mat, rat, def, arm,
 				cmd, health);
+		
 		this.spells = new ArrayList<libraries.Spells>();
 		this.spellCard = spellCard;
 		this.featCard = featCard;

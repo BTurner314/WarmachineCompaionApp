@@ -17,23 +17,24 @@ public abstract class Model {
 	protected Image frontCard;
 	protected Image backCard;
 	private String name;
+	private String subType;
 	private String faction;
 	private String fieldAllowance;
 	private ArrayList<Weapons> weapons;
 	private ArrayList<Abilities> abilities;
 	private int[] stats;
-	private Button mainButton;
+	protected Button mainButton;
 	protected Button increaseHealth;
 	protected Button decreaseHealth;
 	protected ImageView frontCardView;
 	protected VBox cards;
 	protected VBox healthBar;
-	private int health;
+	protected int health;
 	protected Label currentHealthLabel;
-	private int currentHealth;
+	protected int currentHealth;
 	public StringProperty currentHealthText;
 
-	public Model(String name, String faction, String fieldAllowance, Image frontCard,Image backCard, ArrayList<Weapons> weapons, ArrayList<Abilities> abilities, int speed, int str, int mat, int rat, int def, int arm, int cmd, int health) {
+	public Model(String name, String subType, String faction, String fieldAllowance, Image frontCard,Image backCard, ArrayList<Weapons> weapons, ArrayList<Abilities> abilities, int speed, int str, int mat, int rat, int def, int arm, int cmd, int health) {
 		stats = new int[7];
 		mainButton = new Button();
 		increaseHealth = new Button();
@@ -47,6 +48,7 @@ public abstract class Model {
 		this.weapons = new ArrayList<Weapons>();
 		this.abilities = new ArrayList<Abilities>();
 		this.name = name;
+		this.subType = subType;
 		this.faction = faction;
 		this.fieldAllowance = fieldAllowance;
 		this.frontCard = frontCard;
@@ -73,7 +75,7 @@ public abstract class Model {
 		decreaseHealth.setOnAction(e -> takeDamage());
 		this.health = health;
 		currentHealth = health;
-		currentHealthText.setValue("Health: " + currentHealth);
+		currentHealthText.setValue("Health: " + currentHealth + "/" + health);
 		currentHealthLabel.textProperty().bind(currentHealthText);
 		currentHealthLabel.setFont(Font.font("Arial", 30));
 	}
@@ -114,7 +116,7 @@ public abstract class Model {
 	public void takeDamage() {
 		if (currentHealth > 0) {
 			currentHealth--;
-			currentHealthText.setValue("Health: " + currentHealth);
+			currentHealthText.setValue("Health: " + currentHealth + "/" + health);
 		}
 		
 	}	
@@ -123,7 +125,7 @@ public abstract class Model {
 	public void healDamage() { 
 		if (currentHealth < health) {
 			currentHealth++;
-			currentHealthText.setValue("Health: " + currentHealth);
+			currentHealthText.setValue("Health: " + currentHealth + "/" + health);
 		}
 	}
 }

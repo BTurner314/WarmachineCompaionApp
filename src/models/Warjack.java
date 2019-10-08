@@ -9,16 +9,18 @@ import libraries.Abilities;
 
 
 public abstract class Warjack extends Model{
-	public Button[][] damageGrid;
+
+	private Button[][] damageGrid;
 	private  GridPane grid = new GridPane();
 	private int i = 0;
 	private int j = 0;
 	private int pointCost;
-	public Warjack(int pointCost, String name, String faction, String fieldAllowance, Image frontCard, Image backCard,
+	public Warjack(String name, String subType, String faction, int pointCost, String fieldAllowance, Image frontCard, Image backCard,
 			ArrayList<Weapons> weapons, ArrayList<Abilities> abilities, int speed, int str, int mat, int rat, int def,
 			int arm, int cmd, int health, ArrayList<Integer> startingDamage, ArrayList<Integer> cortex, ArrayList<Integer> movement, ArrayList<Integer> leftArm, ArrayList<Integer> rightArm) {
-		super(name, faction, fieldAllowance, frontCard, backCard, weapons, abilities, speed, str, mat, rat, def, arm,
+		super(name, subType, faction, fieldAllowance, frontCard, backCard, weapons, abilities, speed, str, mat, rat, def, arm,
 				cmd, health);
+	
 
 		this.pointCost = pointCost;
 		damageGrid = new Button[6][6];
@@ -35,52 +37,37 @@ public abstract class Warjack extends Model{
 			}
 		}
 
-		ArrayList<Integer> temp = new ArrayList<Integer>();
-		temp = startingDamage;
+
 		int column;
 		int row;
-		while (!temp.isEmpty()) {
-			column = temp.get(0);
-			row = temp.get(1);
+		for (int temp = 0;temp < startingDamage.size(); temp+=2) {
+			column = startingDamage.get(temp);
+			row = startingDamage.get(temp + 1);
 			setGrid(column, row);
-			temp.remove(0);
-			temp.remove(0);
 		}
 
-		temp = cortex;
-		while (!temp.isEmpty()) {
-			column = temp.get(0);
-			row = temp.get(1);
+		for (int temp = 0;temp < cortex.size(); temp+=2) {
+			column = cortex.get(temp);
+			row = cortex.get(temp + 1);
 			setCortex(column, row);
-			temp.remove(0);
-			temp.remove(0);
 		}
-		
-		temp = movement;
-		while (!temp.isEmpty()) {
-			column = temp.get(0);
-			row = temp.get(1);
+
+		for (int temp = 0;temp < movement.size(); temp+=2) {
+			column = movement.get(temp);
+			row = movement.get(temp + 1);
 			setMovement(column, row);
-			temp.remove(0);
-			temp.remove(0);
 		}
-		
-		temp = leftArm;
-		while (!temp.isEmpty()) {
-			column = temp.get(0);
-			row = temp.get(1);
+
+		for (int temp = 0;temp < leftArm.size(); temp+=2) {
+			column = leftArm.get(temp);
+			row = leftArm.get(temp + 1);
 			setLeftArm(column, row);
-			temp.remove(0);
-			temp.remove(0);
 		}
-		
-		temp = rightArm;
-		while (!temp.isEmpty()) {
-			column = temp.get(0);
-			row = temp.get(1);
+
+		for (int temp = 0;temp < rightArm.size(); temp+=2) {
+			column = rightArm.get(temp);
+			row = rightArm.get(temp + 1);
 			setRightArm(column, row);
-			temp.remove(0);
-			temp.remove(0);
 		}
 	}
 

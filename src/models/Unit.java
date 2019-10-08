@@ -1,5 +1,7 @@
 package models;
 
+import javafx.scene.control.Button;
+
 public class Unit {
 
 	private Leader leader;
@@ -16,5 +18,10 @@ public class Unit {
 		this.maxUnitSize = maxSize;
 		this.minPointCost = minCost;
 		this.MaxPointCost = maxCost;
+	}
+	
+	public Button getButton() {
+		return leader.getButton();
+		
 	}
 }

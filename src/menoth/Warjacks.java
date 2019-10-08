@@ -23,5 +23,11 @@ public class Warjacks {
  	//Sanctifier
 private static Image sanctifierFrontCard = new Image(Warjacks.class.getResourceAsStream("/Images/Menoth/MenothWarjacks/sanctifierFrontCard.png"));
 private static Image sanctifierBackCard = new Image(Warjacks.class.getResourceAsStream("/Images/Menoth/MenothWarjacks/sanctifierBackCard.png"));
-public static HeavyWarjack sanctifier = new HeavyWarjack(14, "Sanctifier", "Menoth", "U", sanctifierFrontCard, sanctifierBackCard, WeaponLoadouts.sanctifier, AbilityLoadouts.sanctifier, 5, 11, 6, 5, 10, 19, 0, 32, menothHeavyDamageGrid, menothHeavyCortex, menothHeavyMovement, menothHeavyLeftArm, menothHeavyRightArm);
+public static HeavyWarjack sanctifier = new HeavyWarjack("Sanctifier", "Protectorate Heavy Warjack", "Menoth", 14, "U", sanctifierFrontCard, sanctifierBackCard, WeaponLoadouts.sanctifier, AbilityLoadouts.sanctifier, 5, 11, 6, 5, 10, 19, 0, 32, menothHeavyDamageGrid, menothHeavyCortex, menothHeavyMovement, menothHeavyLeftArm, menothHeavyRightArm);
+public static HeavyWarjack sanctifier2 = new HeavyWarjack("Sanctifier", "Protectorate Heavy Warjack", "Menoth", 14, "U", sanctifierFrontCard, sanctifierBackCard, WeaponLoadouts.sanctifier, AbilityLoadouts.sanctifier, 5, 11, 6, 5, 10, 19, 0, 32, menothHeavyDamageGrid, menothHeavyCortex, menothHeavyMovement, menothHeavyLeftArm, menothHeavyRightArm);
+
+	//Templar
+private static Image templarFrontCard = new Image(Warjacks.class.getResourceAsStream("/Images/Menoth/MenothWarjacks/templarFrontCard.png"));
+private static Image templarBackCard = new Image(Warjacks.class.getResourceAsStream("/Images/Menoth/MenothWarjacks/templarBackCard.png"));
+public static HeavyWarjack templar = new models.HeavyWarjack("Templar","Protectorate Heavy Warjack", "Menoth", 15, "U", templarFrontCard, templarBackCard, libraries.WeaponLoadouts.templar, libraries.AbilityLoadouts.templar, 4, 11, 6, 5, 10, 19, 0, 32, menothHeavyDamageGrid, menothHeavyCortex, menothHeavyMovement, menothHeavyLeftArm, menothHeavyRightArm);
 }
